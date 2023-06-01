@@ -1,0 +1,217 @@
+/*Libre Franklin Google Font*/
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+:root{
+
+  /*colors*/
+  --col-white:#fff;
+  --col-blue: 223, 87%, 63%;
+  --col-pale-blue: hsl(223, 100%, 88%);
+  --col-light-red: hsl(354, 100%, 66%);
+  --col-gray: hsl(0, 0%, 59%);
+  --col-very-dark-blue: hsl(209, 33%, 12%);
+  --col-success:#0aab40;
+  --col-hover-blue:hsl(var(--col-blue), 80%);
+
+}
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+  font-family: 'Libre Franklin', sans-serif;
+}
+a{
+  text-decoration: none;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container{
+  max-width: 712px;
+  display: grid;
+  justify-items: center;
+  height: 100vh;
+  padding: 5rem 2rem 0rem 2rem;
+}
+
+/*----------------------------
+------------HEADER-------------
+-----------------------------*/
+.header{
+  margin-bottom: 2rem;
+  text-align: center;
+}
+/*LOGO*/
+.logo{
+  width: 75px;
+  margin-bottom: 2rem;
+}
+/*headings*/
+.main-heading{
+  font-weight: 300;
+  color: var(--col-gray);
+  font-size: 2.7rem;
+}
+.main-heading span{
+  font-weight: 700;
+  color:var(--col-very-dark-blue);
+}
+.small-heading{
+  margin-top: 0.7rem;
+  margin-bottom: 2rem;
+  color: var(--col-very-dark-blue);
+  font-size: 1.1rem;
+}
+
+/*----------------------------
+--------SUBSCRIBE FORM--------
+-----------------------------*/
+.subscribe-form{
+  display: grid;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  margin-bottom: 4rem;
+  grid-template-columns: 5fr 2fr;
+  grid-gap: 1rem;
+}
+.input-group{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+.email{
+  border-radius: 30px;
+  border: 1px solid var(--col-gray);
+  width: 100%;
+  height: 55px;
+  padding-left: 1.5rem;
+}
+.email.wrong{
+  border-color: var(--col-light-red);
+  border-width: 2px;
+}
+.email.wrong::focus{
+  border-color: var(--col-light-red);
+}
+/*message input, error, success*/
+.input-message{
+  position: absolute;
+  bottom: -22px;
+  font-size: 0.7rem;
+  padding-left: 25px;
+  font-weight: 600;
+}
+.input-message.wrong{
+  color: var(--col-light-red);
+ }
+ .input-message.success{
+  color:var(--col-success);
+ }
+ /*button*/
+.submit-btn{
+  border-radius: 47px;
+  font-weight: 600;
+  background-color: hsl(var(--col-blue));
+  border: none;
+  color: var(--col-white);
+  letter-spacing: 1pxx;
+  width: 100%;
+  height: 55px;
+  font-family: inherit;
+}
+.submit-btn:hover{
+  cursor: pointer;
+  background-color: var(--col-hover-blue);
+}
+
+/*----------------------------
+----------MAIN IMAGE----------
+-----------------------------*/
+.main-image img{
+  width: 100%;
+  display: block;
+}
+
+/*----------------------------
+------------FOOTER------------
+-----------------------------*/
+.footer{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-block: 2rem;
+}
+.socials{
+  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+}
+.social-link{
+  color: hsl(var(--col-blue));
+  font-size: 1.2rem;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-link:hover{
+  cursor: pointer;
+  color: var(--col-white);
+  background-color: hsl(var(--col-blue));
+}
+.copyright{
+  color: var(--col-gray);
+  font-size: 0.8rem;
+}
+
+/*----------------------------
+------------MEDIA-------------
+-----------------------------*/
+@media (max-width:720px){
+  .container{
+    max-width: 100%;
+    padding: 6rem 2rem 0rem 2rem;
+    align-content: space-between;
+  }
+  .main-heading{
+    font-size: 2.2rem;
+  }
+  .subscribe-form{
+    grid-template-columns: 1fr;
+    margin-bottom: 2rem;
+    width: 82%;
+  }
+  .input-message{
+    bottom: 57px;
+  }
+}
+@media (max-width:420px){
+  .subscribe-form{
+    width: 100%;
+  }
+  .header{
+    margin-bottom: 3rem;
+  }
+  .container{
+    padding-top: 5rem;
+  }
+  .main-heading{
+    font-size: 2rem;
+  }
+  .small-heading{
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+  .email, .submit-btn{
+    height: 50px;
+  }
+}
